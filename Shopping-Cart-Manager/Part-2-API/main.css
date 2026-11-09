@@ -1,0 +1,293 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px 6%;
+  font-family: 'Inter', sans-serif;
+  background: #f4f6fb;
+  color: #1e293b;
+  transition: 0.3s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #172554;
+}
+
+h1::after {
+    content: " / cart manager BY sumair ali ansari";
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: rgb(191, 45, 45);
+}
+.header h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Dark Mode Button */
+.dark {
+  padding: 12px 18px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #172554;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.dark:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* API Message */
+#productMsg {
+  margin: 20px 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Product Grid */
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 25px;
+}
+
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.09);
+}
+
+.product h2 {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.product img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin: 15px 0;
+}
+
+.product p {
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+
+.add-cart {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-cart:hover {
+  background: #1d4ed8;
+}
+
+
+#cart {
+  margin-top: 25px;
+  padding: 25px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#cart > div {
+  padding: 18px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#cart p {
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+
+#cart p:first-child {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+
+.rem {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #dc2626;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.rem:hover {
+  background: #dc2626;
+  color: white;
+}
+
+
+#empty-cart {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+}
+
+
+h3 {
+  margin-top: 25px;
+  font-size: 24px;
+  text-align: right;
+}
+
+#total {
+  color: #2563eb;
+}
+
+
+#clear-cart {
+  margin-top: 18px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#clear-cart:hover {
+  background: #b91c1c;
+}
+
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.dark-mode h1 {
+  color: #f8fafc;
+}
+
+.dark-mode .product,
+.dark-mode #cart {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.dark-mode .product h2 {
+  color: #f1f5f9;
+}
+
+.dark-mode .product p {
+  color: #93c5fd;
+}
+
+.dark-mode #cart > div {
+  border-color: #334155;
+}
+
+.dark-mode #empty-cart,
+.dark-mode #productMsg {
+  color: #cbd5e1;
+}
+
+.dark-mode #total {
+  color: #60a5fa;
+}
+
+
+@media (max-width: 1000px) {
+  #products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 25px 4%;
+  }
+
+  #products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 480px) {
+  #products {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .dark {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  h3 {
+    text-align: left;
+  }
+}

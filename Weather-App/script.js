@@ -25,11 +25,14 @@ searchBtn.addEventListener("click", () => {
         }
 
         let data = await res.json();
+        let iconCode = data.weather[0].icon;
+        let iconURL = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
         dynmicDiv.innerHTML = `
         <div id="hey">
             <h2>${data.name}</h2>
             <p>${data.weather[0].description}</p>
+            <img src="${iconURL}" alt="Weather Icon">
             
         
             <h1>${Math.round(data.main.temp)}°C</h1>
